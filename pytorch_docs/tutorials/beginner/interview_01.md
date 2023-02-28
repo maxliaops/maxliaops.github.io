@@ -204,6 +204,7 @@ torch.save(model.state_dict(), 'mnist_cnn.pt')
 
 1. 加载数据集
 在 PyTorch 中，可以使用 torchvision.datasets 包来加载一些常见的数据集，如 MNIST、CIFAR10、ImageNet 等。以 MNIST 数据集为例，可以使用以下代码加载数据：
+
 ```
 from torchvision import datasets, transforms
 
@@ -214,20 +215,24 @@ train_dataset = datasets.MNIST('data', train=True, download=True,
                                ]))
 
 ```
+
 其中，datasets.MNIST() 方法会自动下载 MNIST 数据集，并将训练集和测试集分别保存在 train_dataset 和 test_dataset 对象中。transform 参数可以用来对数据进行预处理，如将数据转换为 PyTorch Tensor 格式，并进行标准化。
 
 2. 使用 DataLoader 对象处理数据
 通过将数据集加载到 Dataset 对象中，可以使用 DataLoader 对象来对数据进行处理和批量加载。例如，以下代码将会将数据集中的数据打乱，并且每次迭代返回一个大小为 batch_size 的数据批量：
+
 ```
 from torch.utils.data import DataLoader
 
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
 ```
+
 其中，batch_size 参数表示每个批量的数据大小，shuffle 参数表示是否需要在每次迭代时打乱数据集。
 
 3. 自定义数据集
 除了使用预定义的数据集之外，还可以通过自定义 Dataset 类来加载和处理自己的数据。以下是一个简单的示例代码：
+
 ```
 import torch
 from torch.utils.data import Dataset
@@ -244,6 +249,7 @@ class MyDataset(Dataset):
         return len(self.data)
 
 ```
+
 在上述代码中，我们定义了一个名为 MyDataset 的 Dataset 类，该类的初始化方法接收一个数据集作为参数，并将数据集保存到 self.data 属性中。getitem() 方法用于从数据集中获取单个数据样本，并将其转换为 PyTorch Tensor 格式。len() 方法用于获取数据集的长度。
 
 通过自定义 Dataset 类，我们可以加载和处理各种格式的数据，例如图片、文本、声音等等。
@@ -254,6 +260,7 @@ PyTorch 提供了许多高级 API 和函数，下面列出了一些常用的高�
 
 1. 自动求导（Autograd）
 PyTorch 的核心是自动求导机制，可以轻松地对任意张量进行微分操作。在 PyTorch 中，只需设置 tensor 的 requires_grad=True，就可以跟踪该 tensor 的求导历史，并且可以通过调用 backward() 方法来计算梯度。例如：
+
 ```
 import torch
 
@@ -266,6 +273,7 @@ print(x.grad)  # tensor([1., 1.])
 
 2. 模型容器（Module）
 在 PyTorch 中，可以使用 nn.Module 类来定义神经网络模型。该类提供了许多有用的方法，例如 add_module()、parameters()、to() 等，可以方便地创建和管理模型中的各个组件。例如：
+
 ```
 import torch.nn as nn
 
@@ -288,10 +296,12 @@ class MyModel(nn.Module):
         return x
 
 ```
+
 在上述代码中，我们定义了一个名为 MyModel 的模型，该模型包含两个卷积层和一个全连接层。在模型定义中，我们使用了 nn.Conv2d、nn.Linear 和一些常用的激活函数（如 F.relu() 和 F.max_pool2d()）。在模型的 forward() 方法中，我们按照模型结构依次调用各个组件。
 
 3. 优化器（Optimizer）
 在 PyTorch 中，可以使用 optim 包来定义和管理优化器。optim 包提供了许多优化器，如 SGD、Adam、RMSprop 等。例如：
+
 ```
 import torch.optim as optim
 
@@ -299,40 +309,48 @@ model = MyModel()
 optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 
 ```
+
 在上述代码中，我们定义了一个名为 optimizer 的优化器，该优化器使用 SGD 算法来更新模型参数，并设置了学习率为 0.01 和动量为 0.9。
 
 4. 数据加载器（DataLoader）
 在 PyTorch 中，可以使用 DataLoader 对象来对数据进行处理和批量加载。DataLoader 提供了许多有用的功能，例如随机打乱数据集、多线程加载数据、自动对齐数据等。例如：
+
 ```
 from torch.utils.data import DataLoader
 
 train_loader = DataLoader(train_dataset, batch_size=batch_size)
 
 ```
+
 在上述代码中，我们定义了一个名为 train_loader 的 DataLoader 对象，该对象从 train_dataset 加载数据，并设置了每个批次的大小为 batch_size。
 
 5. 学习率调度器（Learning Rate Scheduler）
 在 PyTorch 中，可以使用 lr_scheduler 包来调整学习率。lr_scheduler 包提供了许多调度器，如 StepLR、MultiStepLR、ReduceLROnPlateau 等。例如：
+
 ```
 from torch.optim.lr_scheduler import StepLR
 
 scheduler = StepLR(optimizer, step_size=10, gamma=0.1)
 
 ```
+
 在上述代码中，我们定义了一个名为 scheduler 的学习率调度器，该调度器使用 StepLR 策略来调整学习率。每经过 step_size 个 epoch，学习率会乘以 gamma。
 
 6. 损失函数（Loss Function）
 在 PyTorch 中，可以使用 nn 包中的损失函数来计算损失。nn 包提供了许多常用的损失函数，如 nn.CrossEntropyLoss、nn.MSELoss、nn.L1Loss 等。例如：
+
 ```
 import torch.nn as nn
 
 criterion = nn.CrossEntropyLoss()
 
 ```
+
 在上述代码中，我们定义了一个名为 criterion 的交叉熵损失函数。
 
 7. 数据增强（Data Augmentation）
 在 PyTorch 中，可以使用 torchvision.transforms 包来进行数据增强。该包提供了许多常用的数据增强方法，如 RandomCrop、RandomHorizontalFlip、Normalize 等。例如：
+
 ```
 import torchvision.transforms as transforms
 
@@ -344,6 +362,7 @@ transform = transforms.Compose([
 ])
 
 ```
+
 在上述代码中，我们定义了一个名为 transform 的数据增强方法，该方法首先对图片进行随机裁剪和随机水平翻转，然后将图片转换为张量，并对张量进行标准化处理。
 
 以上是 PyTorch 中的一些常用高级 API 和函数，这些 API 和函数可以使我们更加方便地进行模型训练和优化。
