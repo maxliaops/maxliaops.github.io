@@ -1,4 +1,4 @@
-# PyTorch面试题
+# PyTorch知识点总结
 
 1. 什么是PyTorch？它有什么特点和优势？
 
