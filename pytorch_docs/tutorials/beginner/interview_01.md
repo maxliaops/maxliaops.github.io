@@ -311,7 +311,7 @@ train_loader = DataLoader(train_dataset, batch_size=batch_size)
 ```
 在上述代码中，我们定义了一个名为 train_loader 的 DataLoader 对象，该对象从 train_dataset 加载数据，并设置了每个批次的大小为 batch_size。
 
-5.学习率调度器（Learning Rate Scheduler）
+5. 学习率调度器（Learning Rate Scheduler）
 在 PyTorch 中，可以使用 lr_scheduler 包来调整学习率。lr_scheduler 包提供了许多调度器，如 StepLR、MultiStepLR、ReduceLROnPlateau 等。例如：
 ```
 from torch.optim.lr_scheduler import StepLR
