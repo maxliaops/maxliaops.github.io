@@ -1,24 +1,17 @@
+- [PyTorch知识点总结之四](#pytorch知识点总结之四)
+  - [31. 如何在PyTorch中实现生成对抗网络（GAN）？](#31-如何在pytorch中实现生成对抗网络gan)
+  - [32. 如何在PyTorch中实现序列到序列模型（Seq2Seq）？](#32-如何在pytorch中实现序列到序列模型seq2seq)
+  - [33. PyTorch中的LSTM是什么？它有什么应用？](#33-pytorch中的lstm是什么它有什么应用)
+  - [34. 如何在PyTorch中实现注意力机制（Attention）？](#34-如何在pytorch中实现注意力机制attention)
+  - [35. 如何在PyTorch中实现迁移学习？](#35-如何在pytorch中实现迁移学习)
+  - [36. PyTorch中的Dropout是什么？它有什么作用？](#36-pytorch中的dropout是什么它有什么作用)
+  - [37. 如何在PyTorch中实现强化学习模型？](#37-如何在pytorch中实现强化学习模型)
+  - [38. PyTorch中的Batch Normalization是什么？它有什么作用？](#38-pytorch中的batch-normalization是什么它有什么作用)
+  - [39. 如何在PyTorch中实现文本分类模型？](#39-如何在pytorch中实现文本分类模型)
+  - [40. 如何在PyTorch中实现时序预测模型？](#40-如何在pytorch中实现时序预测模型)
+
+
 # PyTorch知识点总结之四
-
-31. 如何在PyTorch中实现生成对抗网络（GAN）？
-
-32. 如何在PyTorch中实现序列到序列模型（Seq2Seq）？
-
-33. PyTorch中的LSTM是什么？它有什么应用？
-
-34. 如何在PyTorch中实现注意力机制（Attention）？
-
-35. 如何在PyTorch中实现迁移学习？
-
-36. PyTorch中的Dropout是什么？它有什么作用？
-
-37. 如何在PyTorch中实现强化学习模型？
-
-38. PyTorch中的Batch Normalization是什么？它有什么作用？
-
-39. 如何在PyTorch中实现文本分类模型？
-
-40. 如何在PyTorch中实现时序预测模型？
 
 ## 31. 如何在PyTorch中实现生成对抗网络（GAN）？
 在 PyTorch 中实现生成对抗网络（GAN）需要定义两个神经网络：一个生成器网络（Generator）和一个判别器网络（Discriminator）。Generator 用于生成伪造的图像，而 Discriminator 用于区分伪造的图像和真实的图像。在训练过程中，Generator 的目标是尽可能地生成逼真的图像，而 Discriminator 的目标是尽可能地区分真实图像和伪造图像。

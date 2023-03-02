@@ -1,25 +1,17 @@
+- [PyTorch知识点总结之五](#pytorch知识点总结之五)
+  - [41. PyTorch中的Adam优化器是什么？它有什么优缺点？](#41-pytorch中的adam优化器是什么它有什么优缺点)
+  - [42. 如何在PyTorch中实现图像分类模型？](#42-如何在pytorch中实现图像分类模型)
+  - [43. PyTorch中的Transformer是什么？它有什么应用？](#43-pytorch中的transformer是什么它有什么应用)
+  - [44. 如何在PyTorch中实现数据增强？](#44-如何在pytorch中实现数据增强)
+  - [45. 如何在PyTorch中实现迁移学习？](#45-如何在pytorch中实现迁移学习)
+  - [46. PyTorch中的BERT是什么？它有什么应用？](#46-pytorch中的bert是什么它有什么应用)
+  - [47. 如何在PyTorch中实现异步数据加载？](#47-如何在pytorch中实现异步数据加载)
+  - [48. PyTorch中的Inception网络是什么？它有什么应用？](#48-pytorch中的inception网络是什么它有什么应用)
+  - [49. 如何在PyTorch中实现目标跟踪模型？](#49-如何在pytorch中实现目标跟踪模型)
+  - [50. PyTorch中的ResNet是什么？它有什么应用？](#50-pytorch中的resnet是什么它有什么应用)
+
+
 # PyTorch知识点总结之五
-
-41. PyTorch中的Adam优化器是什么？它有什么优缺点？
-
-42. 如何在PyTorch中实现图像分类模型？
-
-43. PyTorch中的Transformer是什么？它有什么应用？
-
-44. 如何在PyTorch中实现数据增强？
-
-45. 如何在PyTorch中实现迁移学习？
-
-46. PyTorch中的BERT是什么？它有什么应用？
-
-47. 如何在PyTorch中实现异步数据加载？
-
-48. PyTorch中的Inception网络是什么？它有什么应用？
-
-49. 如何在PyTorch中实现目标跟踪模型？
-
-50. PyTorch中的ResNet是什么？它有什么应用？
-
 
 ## 41. PyTorch中的Adam优化器是什么？它有什么优缺点？
 Adam（Adaptive Moment Estimation）是一种优化算法，它是一种自适应学习率算法，由Kingma和Ba在论文"Adam: A Method for Stochastic Optimization"中提出，适用于大规模和高维度的优化问题。在PyTorch中，Adam是一种常用的优化器，可以用于训练神经网络。
