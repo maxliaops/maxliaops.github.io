@@ -57,6 +57,7 @@ LSTM网络中的每个单元格都包含一个门控机制，可以控制输入�
 在PyTorch中实现注意力机制，可以通过以下步骤完成：
 
 1. 定义注意力函数
+
 在PyTorch中，可以使用torch.nn模块定义一个注意力函数。一个常用的注意力函数是点积注意力函数，可以用以下代码实现：
 
 ```python
@@ -72,8 +73,9 @@ class DotProductAttention(torch.nn.Module):
         attention_weights = F.softmax(scores, dim=-1)
         output = torch.matmul(attention_weights, value)
         return output, attention_weights
-python
+```
 2. 调用注意力函数
+
 在需要应用注意力机制的地方，可以调用定义好的注意力函数。例如，在编码器-解码器模型中，可以在解码器中使用注意力机制来指导解码器在生成每个单词时关注输入序列中的不同部分。可以使用以下代码实现：
 
 ```python
